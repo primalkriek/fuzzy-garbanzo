@@ -25,6 +25,12 @@ git clone https://github.com/primalkriek/modeling-production-capability.git
 conda env create --file environment.yml
 ```
 
+- activate the new conda environment using the following command:
+
+```
+conda activate fuzzy-garbanzo
+```
+
 - once this is done go to a new command line or terminal window and startup jupyter notebooks in this 
 directory
 
