@@ -1,19 +1,25 @@
 import pandas as pd
 
+users_csv = '../data/users.csv'
+clicks_csv = '../data/clicks.csv'
+website_csv = '../data/websites.csv'
+ads_excel = '../data/ads.xlsx'
+
+
 #  Reading, cleaning & preprocessing users
-all_users = pd.read_csv('../data/users.csv', encoding="windows-1252", sep="|")
+all_users = pd.read_csv(users_csv, encoding="windows-1252", sep="|")
 all_users['gender'] = all_users['gender'].str.replace('female', 'F')
 all_users['gender'] = all_users['gender'].str.replace('male', 'M')
 
 #  Reading, cleaning & preprocessing clicks
-all_clicks = pd.read_csv('../data/clicks.csv', encoding="windows-1252", sep=";")
+all_clicks = pd.read_csv(clicks_csv, encoding="windows-1252", sep=";")
 all_clicks['website'] = all_clicks['website'].str.replace('http://', '')
 
 # Reading, cleaning & preprocessing websites
-all_websites = pd.read_csv('../data/websites.csv', encoding="windows-1252", sep=",")
+all_websites = pd.read_csv(website_csv, encoding="windows-1252", sep=",")
 
 #  Reading, cleaning & preprocessing ads
-all_ads = pd.read_excel('../data/ads.xlsx')
+all_ads = pd.read_excel(ads_excel)
 
 # create a seperate DF for de target_age verification and clean this
 unique_target_age = pd.DataFrame(all_ads['target_age'].unique())
